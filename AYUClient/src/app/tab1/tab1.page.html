@@ -1,0 +1,212 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Daily Mood Tracker
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="#efedf5">
+    <ion-card-header>
+      <img src="assets/mentalhealthmetters.jpg" alt="logo" class="center" >
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Today's Report</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content >
+      Tracking down important elements happening troughout the day can help develop
+      progress. This helps understanding your moods so we can become our better selves.
+    <ion-button color="primary" size="full" fill="clear" slot="right">
+      <h1>Start</h1>
+      <ion-icon name="play-outline">
+      </ion-icon>
+    </ion-button>
+  </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>How are you feeling today?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-radio-group>
+
+        <ion-item>
+          <ion-label>Happy</ion-label>
+          <ion-radio value="perfect"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Fine</ion-label>
+          <ion-radio value="normal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Not in the mood</ion-label>
+          <ion-radio value="ok"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sad</ion-label>
+          <ion-radio value="bad"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Really not fine</ion-label>
+          <ion-radio value="worse"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>How many hours of sleep did you get?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-radio-group>
+
+        <ion-item>
+          <ion-label>12/12+</ion-label>
+          <ion-radio value="perfect"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>10</ion-label>
+          <ion-radio value="normal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>8</ion-label>
+          <ion-radio value="ok"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>5</ion-label>
+          <ion-radio value="bad"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3 or less</ion-label>
+          <ion-radio value="worse"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>How many meals have u eaten today?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-range [ticks]="true" [snaps]="true" [pin]="true" [min]="0" [max]="5"></ion-range>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Were you active today?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-radio-group>
+
+        <ion-item>
+          <ion-label>Practiced sports</ion-label>
+          <ion-radio value="perfect"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Did fitness exercises</ion-label>
+          <ion-radio value="normal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Walked</ion-label>
+          <ion-radio value="ok"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Went outside</ion-label>
+          <ion-radio value="bad"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Didn't leave my house</ion-label>
+          <ion-radio value="worse"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Have you socialized today?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-radio-group>
+
+        <ion-item>
+          <ion-label>Yes, I met new people</ion-label>
+          <ion-radio value="perfect"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Yes, with my friends</ion-label>
+          <ion-radio value="normal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>I went to school</ion-label>
+          <ion-radio value="ok"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Only with my family</ion-label>
+          <ion-radio value="bad"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio value="worse"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Did you do something productive today?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-radio-group>
+
+        <ion-item>
+          <ion-label>I finished everything i had on my mind</ion-label>
+          <ion-radio value="perfect"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>I woke up early </ion-label>
+          <ion-radio value="normal"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>I did some chores</ion-label>
+          <ion-radio value="ok"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>I tried doing something productive</ion-label>
+          <ion-radio value="bad"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>I couldn't get myself to do anything</ion-label>
+          <ion-radio value="worse"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

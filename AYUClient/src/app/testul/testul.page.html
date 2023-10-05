@@ -1,0 +1,373 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-buttons></ion-menu-buttons>
+    </ion-buttons>
+    <ion-title>AYU:Client Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="h1b">
+    Welcome to the initial test for AYU!
+  </h1>
+  <p class="ion-margins">
+    <ion-radio-group [(ngModel)]="selectedValue" (ionChange)="print($event)">
+      <ion-list-header>
+        <ion-label>Would you like to take the test in a <b>simple</b> or <b>complex</b> way?</ion-label>
+      </ion-list-header>
+
+
+      <ion-item>
+        <ion-label>Simple</ion-label>
+        <ion-radio slot="start" value="simple"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Complex</ion-label>
+        <ion-radio slot="start" value="complex"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+    <div *ngIf="selectedValue==='complex'" id="complex_test" >
+      <br>
+      <h1 class="h1b"><u>COMPLEX TEST</u></h1>
+      <br>
+
+      <p class="h1a"><b>Word of advice:</b><br>We are <b>NOT</b> experts and we recommend that you go to a psychologist/psychiatrist to reach real conclusions!<br> We recommend that you go to specialists and relaunch the test in "Simple" mode!</p>
+      <ion-list *ngFor=" let qu of questionsArray">
+        <ion-radio-group value="griff">
+          <ion-list-header>
+            <ion-label>{{qu.question}}</ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label>Yes</ion-label>
+            <ion-radio slot="start" value="biff"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Sometimes</ion-label>
+            <ion-radio slot="start" value="griff"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio slot="start" value="buford"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div *ngIf="selectedValue==='simple'" id="simple_test">
+
+      <br>
+      <h1 class="h1b"><u>SIMPLE TEST</u></h1>
+      <br>
+
+      <ion-list>
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>Do you suffer from <i>anxiety?</i></ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label>Yes</ion-label>
+            <ion-radio slot="start" value="anxiety"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio slot="start" value="no-anxiety"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>If you do suffer from anxiety, <i>what type</i> do you suffer from?</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Social anxiety</ion-label>
+            <ion-radio slot="end" value="socialanxiety"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>General anxiety</ion-label>
+            <ion-radio slot="end" value="generalanxiety"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Other...</ion-label>
+            <ion-radio slot="end" value="otheranxiety"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>ADHD?</i></ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="ADHD"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-ADHD"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>depression?</i></ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="depression"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-depression"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>If you do suffer from depression, <i>what type</i> do you suffer from?</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Episodic depression</ion-label>
+            <ion-radio slot="end" value="episodicdepression"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Clinical depression</ion-label>
+            <ion-radio slot="end" value="clinicaldepression"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Other...</ion-label>
+            <ion-radio slot="end" value="otherdepression"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>PTSD?</i></ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="PTSD"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-PTSD"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>Bipolarity?</i></ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="Bipolar"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-bipolar"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>Addiction?</i></ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="Addicted"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-addicted"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from an <i>Eating Disorder</i>?</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="ed"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-ed"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>If you do suffer from an eating disorder, <i>what type</i> do you suffer from?</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Anorexia</ion-label>
+            <ion-radio slot="end" value="Anorexia"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Bulimia</ion-label>
+            <ion-radio slot="end" value="Bulimia"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Overeating</ion-label>
+            <ion-radio slot="end" value="Overeating"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Other...</ion-label>
+            <ion-radio slot="end" value="othered"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>DID</i>? (Dissociative Identity Disorder)</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="DID"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-DID"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Are you a <i>Psychopath</i>?</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="psycho"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-psycho"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Are you a <i>Sociopath</i>?</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="socio"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-socio"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>PPD</i>? (Paranoia)</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="PPD"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-PPD"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>Schizophrenia</i>?</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="schizo"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-schizo"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i>Suicidal thoughts</i>?</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value="suicidal"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-suicidal"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+
+<!--
+         <ion-list>
+          <ion-radio-group>
+            <ion-list-header>
+              <ion-label>Do you suffer from <i></i>?</ion-label>
+            </ion-list-header>
+  
+            <ion-item>
+              <ion-label>Yes</ion-label>
+              <ion-radio slot="start" value=""></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio slot="start" value="no-"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <section>
+    <header class="h1a"></header>
+    <ion-button size="default" fill="solid" class="caca"></ion-button>
+    <ion-button size="default" fill="solid" color="secondary" class="caca2"></ion-button>
+  </section>
+  <section>
+    <header class="h1a"></header>
+    <ion-button fill="solid" class="a"></ion-button>
+    <ion-button fill="solid" color="secondary" class="caca3">Sometimes</ion-button>
+    <ion-button fill="solid" color="tertiary" class="caca3">No</ion-button>
+  </section> 
+-->
+      <br>
+    </div>
+      <section class="ion-margins">
+        <header class="h1b">Are you done with the test?</header>
+        <ion-button fill="solid" color="primary" class="caca2" href="../tabs/signup">Yes, take me to the sign-up page!</ion-button>
+        <ion-button fill="solid" color="secondary" class="caca2">Not yet.</ion-button>
+        <ion-button fill="solid" color="tertiary" class="caca2" href="../tabs/loginintrebare">Take me back!</ion-button>
+      </section>
+</ion-content>

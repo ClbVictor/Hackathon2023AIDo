@@ -1,0 +1,69 @@
+.dodo1 {
+    font-family:static !important;
+    font-size: 4em;
+    color: black;
+}
+@media (max-width:767px){
+    .dodo1 {
+        font-family:static !important;
+        font-size: 2em;
+        color: black;
+    }
+}
+.dodo2 {
+    font-family:static !important;
+    font-size:2em;
+    color: black;
+}
+@media (max-width:767px){
+    .dodo2 {
+        font-family:static !important;
+        font-size: 1.6em;
+        color: black;
+    }
+}
+.dodo3 {
+    font-family:static !important;
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    
+}
+.list{
+    margin-top: 20%;
+
+}
+ion-content{
+    --background: url("/../assets/loginbg.jpg") #b3eeff ;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 5px 50px 5px ;
+    color: black;
+}
+
+input[type=text] {
+    background-color: black;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 50px;
+    font-family: static !important;
+    border-radius: 30px 30px 0px 0px;
+    padding: 15px;
+    color: white;
+}
+input[type=password] {
+    background-color: black;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 50px;
+    font-family: static !important;
+    border-radius: 0px 0px 30px 30px;
+    padding: 15px;
+    color:white;
+}
+
+.style {
+    padding: 15px;
+}

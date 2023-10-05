@@ -1,0 +1,7 @@
+{
+  "name": "AYUClient",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,76 @@
+.dodo {
+    font-family:static !important;
+    font-size: 3em;
+    margin: 0;
+}
+@media (max-width:767px){
+    .dodo {
+        font-family:static !important;
+        font-size: 2em;
+    }
+}
+.dodo2 {
+    font-family:static !important;
+    font-size:2em;
+}
+.dodo3 {
+    font-family:static !important;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+.dodo4 {
+    font-size: 1.5em;
+    font-family:static !important;
+    color: black;
+    padding-bottom: 15px;
+}
+.dodo5 {
+    margin-top: 15%;
+}
+.dodo6 {
+    font-family:static !important;
+    color: black;
+    font-size:small;
+}
+@media(max-width:2000px){
+    .dodo6{
+        width: 30%vw;
+    }
+}
+@media (max-width:767px){
+    .dodo6{
+        width: 85%;
+    }
+}
+.margins{
+    font-family:static !important;
+    margin-left:15px;
+    margin-right:15px;
+    padding: 0 15px;
+}
+.loginpage{
+    
+    background: url("/../assets/login.jpg") #b3eeff;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 15px 5px 15px;
+    color: black;
+    border-radius: 0px 0px 30px 30px;
+}
+ion-list{
+    --margin: 0 -15px!important;
+    border-radius: 15px 15px 0 0;
+    margin-top: -15px;
+}
+ion-label{
+    margin-bottom:-20px;
+}
+
+.Footerlogin{
+    background-color: rgb(18,18,18);
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+} 
