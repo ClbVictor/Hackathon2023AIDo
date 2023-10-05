@@ -1,0 +1,135 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Tracking</ion-card-title>
+    <ion-card-subtitle>This is where you'll find your workouts and your tracking information.</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Click workout to edit  
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col size="0.7" class="day-button">
+          <ion-card class="gray-bg">
+            <ion-card-content class="button-content">
+              <ion-button fill="clear" class="small-button">PUSH</ion-button>
+            </ion-card-content>
+          </ion-card>
+          <div class="day-text">Mon</div>
+        </ion-col>
+        <ion-col size="0.7" class="day-button">
+          <ion-card class="gray-bg">
+            <ion-card-content class="button-content">
+              <ion-button fill="clear" class="small-button">PUll</ion-button>
+            </ion-card-content>
+          </ion-card>
+          <div class="day-text">Tue</div>
+        </ion-col>
+        <ion-col size="0.7" class="day-button">
+          <ion-card class="gray-bg">
+            <ion-card-content class="button-content">
+              <ion-button fill="clear" class="small-button">LEGS</ion-button>
+            </ion-card-content>
+          </ion-card>
+          <div class="day-text">Wed</div>
+        </ion-col>
+        <ion-col size="0.7" class="day-button">
+          <ion-card class="gray-bg">
+            <ion-card-content class="button-content">
+              <ion-button fill="clear" class="small-button">PUSH</ion-button>
+            </ion-card-content>
+          </ion-card>
+          <div class="day-text">Thu</div>
+        </ion-col>
+        <ion-col size="0.7" class="day-button">
+          <ion-card class="gray-bg">
+            <ion-card-content class="button-content">
+              <ion-button fill="clear" class="small-button">PULL</ion-button>
+            </ion-card-content>
+          </ion-card>
+          <div class="day-text">Fri</div>
+        </ion-col>
+        <ion-col size="0.7" class="day-button">
+          <ion-card class="gray-bg">
+            <ion-card-content class="button-content">
+              <ion-button fill="clear" class="small-button">REST</ion-button>
+            </ion-card-content>
+          </ion-card>
+          <div class="day-text">Sat</div>
+        </ion-col>
+        <ion-col size="0.7" class="day-button">
+          <ion-card class="gray-bg">
+            <ion-card-content class="button-content">
+              <ion-button fill="clear" class="small-button">REST</ion-button>
+            </ion-card-content>
+          </ion-card>
+          <div class="day-text">Sun</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+</ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row justify-content-center align-items-center>
+        <ion-col size="8">
+          <ion-card-header>
+            <ion-card-title>FOOD</ion-card-title>
+            <ion-card-subtitle>1383 / 3000 CAL</ion-card-subtitle>
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="4">
+          <ion-card class="gray-bg">
+            <ion-card-content>
+              <ion-button fill="clear" style="text-align: center;">ENTER</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row justify-content-center align-items-center>
+        <ion-col size="8">
+          <ion-card-header>
+            <ion-card-title>BMI</ion-card-title>
+            <ion-card-subtitle>20.0</ion-card-subtitle>
+          </ion-card-header>
+        </ion-col>
+        <ion-col size="4">
+          <ion-card class="gray-bg">
+            <ion-card-content>
+              <ion-button fill="clear" style="text-align: center;">EDIT INFO</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-content >
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 3 page"></app-explore-container>
+</ion-content>
