@@ -2,18 +2,27 @@
   background-color: #070f6174;
 }
 
-.small-button {
-  font-size: 10px; /* Adjust the font size as needed */
-}
-
 .button-content {
   text-align: center;
 }
 
 .day-button {
   text-align: center;
+  font-size: 10px;
 }
 
 .day-text {
   margin-top: 5px; /* Add margin for spacing */
+}
+
+.textbuton5{
+  text-align: center;
+}
+
+.textsubbut{
+  font-size: 16px;
+}
+
+.rotated-text {
+  transform: rotate(270deg);
 }
