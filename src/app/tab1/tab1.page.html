@@ -15,25 +15,18 @@
         <ion-button tab="app-tab3" size="small" >
           Create
         </ion-button>
-
       </ion-card-title>
-
     </ion-card-header>
-
     <ion-card-content>
-      Click here to design your 
-personalized workout plan with the help of our AI assistant.
+      Click here to design your personalized workout plan with the help of our AI assistant.
     </ion-card-content>
   </ion-card>
   
-  <ion-button id="open-toast">Open Toast</ion-button>
-<ion-toast
-  trigger="open-toast"
-  [duration]="3000"
-  message="Hello Styled World!"
-  class="custom-toast"
-  [buttons]="toastButtons"
-></ion-toast>
-
-
+  <ion-button (click)="showAlert()" id="button-alert">Click Me</ion-button>
+  <ion-alert
+    trigger="button-alert"
+    header="Alert!"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
 </ion-content>
