@@ -1,84 +1,49 @@
 ion-input {
-  --highlight-height: 2px;
-  --highlight-color-focused: #43e7f3;
-  --highlight-color-valid: #6f58d8;
-  --highlight-color-invalid: #ff46be;
-}
-
-.text-font {
-  font-family: static!important;
-  text-align: center;
-}
-
-ion-slides {
-  height: 100%;
-}
-
-ion-slide {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items at the top */
-  width: 100%;
-  height: 100%;
-}
-
-canvas {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  width: 1000px;
-  height: 1000px;
-}
-
-ion-button {
-  margin-bottom: 30px;
-  padding: 0px;
-}
-
-.Antonia {
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-}
-
-.Mara {
- position: initial;
-  justify-content: space-between;
-  margin-top: 0 auto;
-  border-top: 0 ;
+    --highlight-height: 2px;
+    --highlight-color-focused: #43e7f3;
+    --highlight-color-valid: #6f58d8;
+    --highlight-color-invalid: #ff46be;
+  }
+  .text-font{
+    font-family: static!important;
+    text-align: center;
+  }
+  ion-slides{
+    height: 100%;
+  }
+  ion-slide{
+    padding: 15px;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+  }
   
-  margin-bottom: 20px;
+  canvas{
+    padding: 15px;
+    display:flex;
+    flex-direction: column;
+    width:1000px;
+    height: 1000px;
+  }
+  
+  ion-button{
+    margin-bottom: 30px;
+    padding: 5px;
+  }
+
+  .Antonia{
+   position: fixed;
+  right: 0px; bottom: 0px;
+  width: 40px;
+  height:40px;
+  padding: 5px;
+  }
+
+  .Mara{
+  left: 10px;
   width: 90%;
-  padding: 10px;
-  background-color: #333; /* Semi-dark background color */
-  border-radius: 5px;
-  color: white; /* Text color */
-}
-
-
-.Mara ion-button {
-  font-size: 18px;
-  padding: 0;
-  color: #ff4646; /* Red color for the delete icon */
-  cursor: pointer;
-}
-
-.Mara ion-button::before {
-  padding-top: 5px;
-  font-family: 'Ionicons'; /* Use Ionicons font for the icon */
-}
-
-/* Add a separator line between the goal name and the delete icon */
-.Mara::after {
-  content: "";
-  flex-grow: 1;
-  height: 1px;
-  background-color: #555; /* Darker line color */
-  margin-left: 10px;
-  margin-right: 10px;
-  opacity: 0.5; /* Reduce line opacity */
-}
+  height: 10%;
+  vertical-align: top;
+  
+  }

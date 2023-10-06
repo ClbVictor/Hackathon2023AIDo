@@ -13,7 +13,7 @@
       <ion-input class="text-font" [(ngModel)]="myGoal.description">Goal Description</ion-input>
       <ion-button class="text-font" (click)="addGoal()">Save Goal</ion-button>
     </ion-slide>-->
-      
+    
     <ion-slide>
       
       
@@ -43,45 +43,45 @@
             </ion-content>
           </ng-template>
         </ion-modal>
-     
-<div *ngFor="let gl of goalArray" class="Mara">
-  <ion-list style="width: 100%;">
-    <ion-item>
-      <ion-label>{{ gl.name }}</ion-label>
-      <ion-label>{{ gl.description }}</ion-label>
-      <ion-button (click)="removeGoal(gl.name)" fill="clear" color="danger">Remove</ion-button>
-    </ion-item>
-  </ion-list>
-</div>
+      <div *ngFor="let gl of goalArray" class="Mara">
+        <ion-list style="width: 100%;" [inset]="true">
+          <ion-item>
+            <ion-label>{{ gl.name }}</ion-label>
+            <ion-label>{{ gl.description }}</ion-label>
+          </ion-item>
+          
+        </ion-list>
 
-
+      </div>
 
       
     </ion-slide>
     <ion-slide>
-      <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
-      [legend]="lineChartLegend"></canvas>
-    
-    
-   
-   
-    
-    
-        <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData2" [options]="lineChartOptions"
-      [legend]="lineChartLegend"></canvas>
-      
-    
-   
-   
-  
-</ion-slide>
-<!--<ion-slide>
-  <div>
-    <canvas baseChart class="style" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
-      [legend]="lineChartLegend">
-    </canvas>
-  </div>
-</ion-slide>-->  
+      <div>
+        
+            <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
+          [legend]="lineChartLegend"></canvas>
+        
+        
+       
+       
+        
+        
+            <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData2" [options]="lineChartOptions"
+          [legend]="lineChartLegend"></canvas>
+          
+        
+       
+       
+      </div>
+    </ion-slide>
+    <!--<ion-slide>
+      <div>
+        <canvas baseChart class="style" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
+          [legend]="lineChartLegend">
+        </canvas>
+      </div>
+    </ion-slide>-->  
 
-</ion-slides>
+  </ion-slides>
 </ion-content>

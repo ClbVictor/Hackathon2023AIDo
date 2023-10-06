@@ -7,7 +7,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { Goal } from '../Models/goal';
 import { IonModal } from '@ionic/angular';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -24,10 +23,9 @@ export class Tab3Page implements OnInit {
   lineChartOptions: ChartOptions<'line'>;
   lineChartLegend = true;
   lvlArray: any[] = [0];
-  lvlArray2: any[] = [0];
   goalStatsArray: any[] = [0];
   goalArray: any[];
-  completedGoalsCount = 0;
+  
   datas: number[] = [3, 7, 2, 1];
 
   slideOpts = {
@@ -35,7 +33,7 @@ export class Tab3Page implements OnInit {
     speed: 400
   };
 
-  constructor(private db: AngularFirestore, private alertController: AlertController) {
+  constructor(private db: AngularFirestore) {
     console.log("am intrat in constructorul paginii");
   }
 
@@ -46,7 +44,6 @@ export class Tab3Page implements OnInit {
     var lvlCol = this.db.collection('User');
     lvlCol.valueChanges().subscribe(User => {
       this.lvlArray = User;
-      this.lvlArray2 = User;
       this.initializeChart(this.lvlArray[0].depression_lvl)
     })
     var lvlCol3 = this.db.collection('User');
@@ -59,29 +56,8 @@ export class Tab3Page implements OnInit {
       this.goalArray = Goals;
     })
   }
-  removeGoal(goalName: string) {
-    const goalToRemove = this.goalArray.find(goal => goal.name === goalName);
-
-    if (goalToRemove) {
-      // Remove the goal from the local array
-      const goalIndex = this.goalArray.indexOf(goalToRemove);
-      this.goalArray.splice(goalIndex, 1);
-
-      // Remove the goal from the database
-      this.db.collection("Goals", ref => ref.where("name", "==", goalName))
-        .get()
-        .subscribe(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            doc.ref.delete().then(() => {
-              console.log(`Goal "${goalName}" successfully removed from the database.`);
-            }).catch(error => {
-              console.error(`Error removing goal "${goalName}" from the database: `, error);
-            });
-          });
-        });
-    } else {
-      console.error(`Goal "${goalName}" not found.`);
-    }
+  removeGoal() {
+    console.log("sterg");
   }
   addGoal() {
     console.log("salvez");
@@ -101,8 +77,7 @@ export class Tab3Page implements OnInit {
     this.modal.dismiss(null, 'confirm');
     this.addGoal();
   }
-  onWillDismiss(event: Event) {}
-  
+
   initializeChart(chartData: number[]): void {
     this.lineChartData = {
       labels: [
