@@ -45,8 +45,8 @@ canvas {
   height: 1000px;
 }
 
-ion-button {
-  /* Your button styles here */
+.hapciu {
+  font-size: 30px;
 }
 
 ion-label {
@@ -99,4 +99,11 @@ ion-label {
   margin-left: 10px;
   margin-right: 10px;
   opacity: 0.5;
+}
+.custom-toolbar {
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  --background:#00465D;
+  height: 97px;
+  position: relative; 
 }
