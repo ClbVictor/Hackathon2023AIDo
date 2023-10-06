@@ -1,6 +1,7 @@
-<ion-header class="text-font">
-  <ion-toolbar color="primary">
-    <ion-title class="text-font">
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <div class="circle"></div>
+    <ion-title>
       Goal Setter
     </ion-title>
   </ion-toolbar>
@@ -46,15 +47,16 @@
      
 <!-- ... (previous code) ... -->
 <div *ngFor="let gl of goalArray" class="Mara">
-  <ion-list>
+  <ion-list >
     <ion-item>
       <ion-label class="task-title">{{ gl.name }}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label class="goal-description">{{ gl.description }}</ion-label>
+      <ion-label >{{ gl.description }}</ion-label>
     </ion-item>
     <ion-item>
-      <ion-button style="margin-top: 10px; width: 100%;" (click)="showConfirmationDialog(gl)"> <!-- Pass the goal to the function -->
+      <ion-button style="margin-top: 10px;margin-bottom: 10px;width: 100%;" (click)="showConfirmationDialog(gl)"> <!-- Pass the goal to the function -->
+        
         <ion-title class="text-font">Delete</ion-title>
       </ion-button>
     </ion-item>
@@ -62,9 +64,8 @@
 </div>
 
 
-
 <!-- ... (previous code) ... -->
-<ion-button (click)="showAlert()" id="button-alert">Click Me</ion-button>
+
 
   <ion-alert
     trigger="button-alert"

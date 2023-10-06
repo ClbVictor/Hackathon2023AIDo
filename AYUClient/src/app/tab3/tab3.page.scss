@@ -1,8 +1,8 @@
 ion-input {
   --highlight-height: 2px;
-  --highlight-color-focused: #43e7f3;
-  --highlight-color-valid: #6f58d8;
-  --highlight-color-invalid: #ff46be;
+  --highlight-color-focused: #00465D;
+  --highlight-color-valid: #00465D;
+  --highlight-color-invalid: #00465D;
 }
 
 .text-font {
@@ -40,7 +40,7 @@ ion-slide {
   font-size: 10px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 canvas {
   padding: 15px;
@@ -53,12 +53,7 @@ canvas {
 ion-button {
   
 }
-ion-label {
-  font-size: 20px;
-  padding-right: 20px;
-  display: block;
-  margin-bottom: 5px;
-}
+
 .Antonia {
   position: fixed;
   right: 0px;
@@ -74,45 +69,12 @@ ion-label {
   margin-top: 0 auto;
   border-top: 0;
   margin-bottom: 20px;
-  width: 90%;
-  padding: 10px;
+  width: 100%;
+  padding: 2px;
   background-color: #4444; /* Semi-dark background color */
   border-radius: 5px;
   color: white; /* Text color */
 }
 
-
-/* ... (previous styles) ... */
-
-.Mara ion-button {
-  font-size: 18px;
-  padding: 0;
-  color: #444444; /* Red color for the delete icon */
-  cursor: pointer;
-  top: -40px;
-}
-
-.Mara ion-button::before {
-  padding-top: 5px;
-  font-family: 'Ionicons'; /* Use Ionicons font for the icon */
-}
-
-/* Add a separator line between the labels and the delete icon */
-.Mara::after {
-  content: "";
-  flex-grow: 1;
-  height: 1px;
-  background-color: #444444; /* Darker line color */
-  margin-left: 10px;
-  margin-right: 10px;
-  opacity: 0.5; /* Reduce line opacity */
-}
-
-/* Add custom class for description */
-.goal-description {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: white;
-}
 
 
