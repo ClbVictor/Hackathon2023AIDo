@@ -1,6 +1,7 @@
 .dodo {
     font-size: 3em;
     margin: 0;
+    color: rgb(255, 255, 255);
 }
 
 @media (max-width: 767px) {
@@ -11,6 +12,7 @@
 
 .dodo2 {
     font-size: 2em;
+    color: rgb(255, 255, 255);
 }
 
 .dodo3 {
@@ -31,8 +33,8 @@
 }
 
 .dodo6 {
-    color: rgb(255, 255, 255);
-    font-size: small;
+    color: rgb(0, 0, 0);
+    font-size: medium;
 }
 
 @media (max-width: 2000px) {

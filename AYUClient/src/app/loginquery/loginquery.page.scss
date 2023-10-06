@@ -7,19 +7,19 @@
     .dodo1 {
         font-family:static !important;
         font-size: 2em;
-        color: black;
+        color: rgb(255, 255, 255);
     }
 }
 .dodo2 {
     font-family:static !important;
     font-size:2em;
-    color: black;
+    color: rgb(195, 195, 195);
 }
 @media (max-width:767px){
     .dodo2 {
         font-family:static !important;
         font-size: 1.6em;
-        color: black;
+        color: rgb(196, 196, 196);
     }
 }
 .dodo3 {
@@ -34,7 +34,6 @@
 
 }
 ion-content{
-    --background: url("/../assets/loginbg.jpg") #b3eeff ;
     background-size: cover;
     background-position: center;
     padding: 50px 5px 50px 5px ;
