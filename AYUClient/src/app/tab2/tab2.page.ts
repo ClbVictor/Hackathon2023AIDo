@@ -21,7 +21,7 @@ export class Tab2Page {
       header: 'Select Robot',
       buttons: [
         {
-          text: 'AYU v1',
+          text: 'Smart Water Sensor',
           data: {
             action: 'connect',
           },
