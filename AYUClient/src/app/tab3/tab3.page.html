@@ -13,7 +13,7 @@
       <ion-input class="text-font" [(ngModel)]="myGoal.description">Goal Description</ion-input>
       <ion-button class="text-font" (click)="addGoal()">Save Goal</ion-button>
     </ion-slide>-->
-      
+    
     <ion-slide>
       
       
@@ -43,64 +43,45 @@
             </ion-content>
           </ng-template>
         </ion-modal>
-     
-<!-- ... (previous code) ... -->
-<div *ngFor="let gl of goalArray" class="Mara">
-  <ion-list>
-    <ion-item>
-      <ion-label class="task-title">{{ gl.name }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label class="goal-description">{{ gl.description }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-button style="margin-top: 10px; width: 100%;" (click)="showConfirmationDialog(gl)"> <!-- Pass the goal to the function -->
-        <ion-title class="text-font">Delete</ion-title>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-</div>
+      <div *ngFor="let gl of goalArray" class="Mara">
+        <ion-list style="width: 100%;" [inset]="true">
+          <ion-item>
+            <ion-label>{{ gl.name }}</ion-label>
+            <ion-label>{{ gl.description }}</ion-label>
+          </ion-item>
+          
+        </ion-list>
 
-
-
-<!-- ... (previous code) ... -->
-<ion-button (click)="showAlert()" id="button-alert">Click Me</ion-button>
-
-  <ion-alert
-    trigger="button-alert"
-    header="Reminder!"
-    message="You have to drink water!"
-    [buttons]="alertButtons"
-    (didDismiss)="setResult($event)"
-  ></ion-alert>
-
+      </div>
 
       
     </ion-slide>
     <ion-slide>
-      <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
-      [legend]="lineChartLegend"></canvas>
-    
-    
-   
-   
-    
-    
-        <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData2" [options]="lineChartOptions"
-      [legend]="lineChartLegend"></canvas>
-      
-    
-   
-   
-  
-</ion-slide>
-<!--<ion-slide>
-  <div>
-    <canvas baseChart class="style" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
-      [legend]="lineChartLegend">
-    </canvas>
-  </div>
-</ion-slide>-->  
+      <div>
+        
+            <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
+          [legend]="lineChartLegend"></canvas>
+        
+        
+       
+       
+        
+        
+            <canvas baseChart class="gucci" [type]="'line'" [data]="lineChartData2" [options]="lineChartOptions"
+          [legend]="lineChartLegend"></canvas>
+          
+        
+       
+       
+      </div>
+    </ion-slide>
+    <!--<ion-slide>
+      <div>
+        <canvas baseChart class="style" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions"
+          [legend]="lineChartLegend">
+        </canvas>
+      </div>
+    </ion-slide>-->  
 
-</ion-slides>
+  </ion-slides>
 </ion-content>
