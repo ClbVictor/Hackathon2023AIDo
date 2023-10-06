@@ -22,3 +22,14 @@
 ion-title{
     font-family: static;
 }
+.custom-toolbar {
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    --background:#00465D;
+    height: 97px;
+    position: relative; 
+  }
+  
+.floksi{
+    font-size: 30px;
+}
