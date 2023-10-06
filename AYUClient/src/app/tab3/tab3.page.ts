@@ -70,14 +70,14 @@ export class Tab3Page implements OnInit {
       // Schedule the next alert after 2 minutes
       this.alertInterval = setTimeout(() => {
         this.showAlert();
-      }, 2 * 1000); // 2 minutes in milliseconds
+      }, 2 * 5000); // 2 minutes in milliseconds
     }
   }
 
   async scheduleAlert() {
     setTimeout(() => {
       this.showAlert();
-    }, 2 * 1000); // 2 minutes in milliseconds
+    }, 2 * 5000); // 2 minutes in milliseconds
   }
 
   ngOnInit() {
