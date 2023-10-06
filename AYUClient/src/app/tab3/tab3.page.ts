@@ -1,10 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
-import { AngularFireModule } from "@angular/fire/compat";
-import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ChartConfiguration, ChartOptions } from "chart.js";
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { Goal } from '../Models/goal';
 import { IonModal } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
@@ -17,6 +13,12 @@ import { AlertController } from '@ionic/angular';
 
 export class Tab3Page implements OnInit {
   @ViewChild(IonModal) modal: IonModal;
+  private lastDismissedRole: string | null = null; // Track the role of the last dismissed alert
+
+  constructor(private db: AngularFirestore, private alertController: AlertController) {
+    console.log("am intrat in constructorul paginii");
+  }
+
   myGoal: Goal = new Goal();
   title = 'ng2-charts-demo';
   lineChartData: ChartConfiguration<'line'>['data'];
@@ -35,11 +37,46 @@ export class Tab3Page implements OnInit {
     speed: 400
   };
 
-  constructor(private db: AngularFirestore, private alertController: AlertController) {
-    console.log("am intrat in constructorul paginii");
+  async showAlert() {
+    // Trigger the alert only if the last dismissed role was not 'done'
+    if (this.lastDismissedRole !== 'done') {
+      const alert = await this.alertController.create({
+        header: 'Reminder!',
+        message: 'You have to drink water!',
+        buttons: this.alertButtons,
+      });
+      await alert.present(); // Display the alert
+    }
   }
 
+  // Function to schedule the alert again after 2 minutes
+  async scheduleAlert() {
+    setTimeout(() => {
+      this.showAlert();
+    }, 2 * 1000); // 2 minutes in milliseconds
+  }
+  public alertButtons = [
+    {
+      text: 'Done',
+      role: 'done',
+      handler: () => {
+        console.log('Done button pressed');
+        this.lastDismissedRole = 'done';
+        this.scheduleAlert(); // Schedule the alert again
+      },
+    },
+    {
+      text: 'Remind Me',
+      role: 'remind',
+      handler: () => {
+        console.log('Remind Me button pressed');
+        this.lastDismissedRole = 'remind';
+        this.scheduleAlert(); // Schedule the alert again
+      },
+    },
+  ];
   ngOnInit() {
+    this.showAlert();
     this.myGoal.name;
     this.myGoal.description;
     console.log("Am intrat pe pagina");
@@ -111,9 +148,9 @@ export class Tab3Page implements OnInit {
   }
   markAsDone(goal: Goal) {
     // Increase the count variable or perform any necessary action
-    this.completedGoalsCount++;
-    this.db.collection("User").doc('goal_lvl').update({
-      goal_lvl: this.completedGoalsCount
+    this.completedGoalsCount= this.completedGoalsCount + 1;
+    this.db.collection("User").doc('docu').update({
+      goal_lvl: [0, 3, 5, 3, 4, 2, this.completedGoalsCount]
     }).then(() => {
       console.log(`Goal "${goal.name}" marked as done. Count updated in the database.`);
     }).catch(error => {
@@ -157,7 +194,7 @@ export class Tab3Page implements OnInit {
         {
           data: chartData,
           //data: [1, 2, 4, 8, 16, 32, 64],
-          label: 'Pulse',
+          label: 'Water',
           fill: true,
           tension: 0.5,
           borderColor: 'black',
@@ -196,6 +233,9 @@ export class Tab3Page implements OnInit {
     };
 
     this.lineChartOptions = { responsive: true };
+
+    
+  
   }
 }
 

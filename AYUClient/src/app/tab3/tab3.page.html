@@ -57,7 +57,15 @@
   </ion-list>
 </div>
 <!-- ... (previous code) ... -->
+<ion-button (click)="showAlert()" id="button-alert">Click Me</ion-button>
 
+  <ion-alert
+    trigger="button-alert"
+    header="Reminder!"
+    message="You have to drink water!"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
 
 
       
