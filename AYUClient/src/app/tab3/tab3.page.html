@@ -44,19 +44,15 @@
           </ng-template>
         </ion-modal>
      
-<!-- ... (previous code) ... -->
 <div *ngFor="let gl of goalArray" class="Mara">
-  <ion-list style="width: 100%;" [inset]="true">
+  <ion-list style="width: 100%;">
     <ion-item>
       <ion-label>{{ gl.name }}</ion-label>
       <ion-label>{{ gl.description }}</ion-label>
-      <ion-button (click)="showConfirmationDialog(gl)"> <!-- Pass the goal to the function -->
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
+      <ion-button (click)="removeGoal(gl.name)" fill="clear" color="danger">Remove</ion-button>
     </ion-item>
   </ion-list>
 </div>
-<!-- ... (previous code) ... -->
 
 
 
