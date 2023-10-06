@@ -52,14 +52,14 @@ export class Tab3Page implements OnInit {
     var lvlCol3 = this.db.collection('User');
     lvlCol3.valueChanges().subscribe(User => {
       this.goalStatsArray = User;
-      this.initializeChart2(this.lvlArray[0].goal_lvl)
+      this.initializeChart2(this.lvlArray2[0].goal_lvl)
     })
     var lvlCol2 = this.db.collection('Goals');
     lvlCol2.valueChanges().subscribe(Goals => {
       this.goalArray = Goals;
     })
   }
-  removeGoal(goalName: string) {
+   removeGoal(goalName: string) {
     const goalToRemove = this.goalArray.find(goal => goal.name === goalName);
 
     if (goalToRemove) {
@@ -71,7 +71,7 @@ export class Tab3Page implements OnInit {
       this.db.collection("Goals", ref => ref.where("name", "==", goalName))
         .get()
         .subscribe(querySnapshot => {
-          querySnapshot.forEach(doc => {
+          querySnapshot.forEach(doc => {  
             doc.ref.delete().then(() => {
               console.log(`Goal "${goalName}" successfully removed from the database.`);
             }).catch(error => {
@@ -82,6 +82,45 @@ export class Tab3Page implements OnInit {
     } else {
       console.error(`Goal "${goalName}" not found.`);
     }
+  } 
+  async showConfirmationDialog(goal: Goal) {
+    const alert = await this.alertController.create({
+      header: 'Confirm Action',
+      message: 'What would you like to do with this goal?',
+      buttons: [
+        {
+          text: 'Mark as Done',
+          handler: () => {
+            this.markAsDone(goal);
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.removeGoal(goal.name);
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+  markAsDone(goal: Goal) {
+    // Increase the count variable or perform any necessary action
+    this.completedGoalsCount++;
+    this.db.collection("User").doc('goal_lvl').update({
+      goal_lvl: this.completedGoalsCount
+    }).then(() => {
+      console.log(`Goal "${goal.name}" marked as done. Count updated in the database.`);
+    }).catch(error => {
+      console.error(`Error updating count for goal "${goal.name}" in the database: `, error);
+    });
+    console.log(this.completedGoalsCount);
+    this.removeGoal(goal.name);
   }
   addGoal() {
     console.log("salvez");
@@ -130,6 +169,8 @@ export class Tab3Page implements OnInit {
     this.lineChartOptions = { responsive: true };
   }
   initializeChart2(chartData: number[]): void {
+    //make the 7th element of the array completeGoalsCount
+    
     this.lineChartData2 = {
       labels: [
         'Thursday',
@@ -143,6 +184,7 @@ export class Tab3Page implements OnInit {
       datasets: [
         {
           data: chartData,
+          
           //data: [1, 2, 4, 8, 16, 32, 64],
           label: 'Goals completed',
           fill: true,
